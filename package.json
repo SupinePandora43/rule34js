@@ -7,7 +7,7 @@
   "license": "MIT",
   "keywords": [
     "rule", "34", "rule34", "rule34.xxx", "xxx", "api"
-  ]
+  ],
   "dependencies": {
     "bent": "^7.3.7",
     "fast-xml-parser": "^3.17.4"
