@@ -1,10 +1,13 @@
 {
   "name": "rule34js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.js",
   "repository": "https://github.com/SupinePandora43/rule34js",
   "author": "SupinePandora43 <supinepandoraggg@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "rule", "34", "rule34", "rule34.xxx", "xxx", "api"
+  ]
   "dependencies": {
     "bent": "^7.3.7",
     "fast-xml-parser": "^3.17.4"
