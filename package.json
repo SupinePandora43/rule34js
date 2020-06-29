@@ -5,11 +5,22 @@
   "repository": "https://github.com/SupinePandora43/rule34js",
   "author": "SupinePandora43 <supinepandoraggg@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "keywords": [
-    "rule", "34", "rule34", "rule34.xxx", "xxx", "api"
+    "rule",
+    "34",
+    "rule34",
+    "rule34.xxx",
+    "xxx",
+    "api"
   ],
   "dependencies": {
     "bent": "^7.3.7",
     "fast-xml-parser": "^3.17.4"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.5"
   }
 }

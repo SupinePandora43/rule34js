@@ -1,5 +1,5 @@
-const bent = require("bent")
-const parser = require("fast-xml-parser")
+import { parse } from "fast-xml-parser"
+import bent = require("bent")
 
 const parseroptions = {
     attributeNamePrefix: "",
@@ -18,16 +18,19 @@ const parseroptions = {
     stopNodes: ["parse-me-as-string"]
 }
 const fetchString = bent('string')
-
-async function posts(options) {
-    if (options == {}||options==null) {
+type Rule34Options = {
+    tags: String[]
+}
+type Rule34OptionsOptional = Partial<Rule34Options>
+async function posts(options: Rule34OptionsOptional) {
+    if (options == {} || options == null) {
         throw "nope"
     }
     options.tags = options.tags || ["all"]
     const url = `https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags=${options.tags.join("+")}`
     const obj = await fetchString(url)
-    const json = parser.parse(obj, parseroptions, true)
-    return json.posts.post
+    const json = parse(obj, parseroptions, true)
+    return json.posts.post as Object[]
 }
 
-module.exports = posts
+export = posts

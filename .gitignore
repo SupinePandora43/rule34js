@@ -34,3 +34,4 @@ dist
 
 yarn.lock
 .vs
+/out

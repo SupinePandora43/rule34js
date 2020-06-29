@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "sourceRoot": "src",
+    "target": "ES2019",
+    "moduleResolution": "Node",
+    "module": "CommonJS",
+    /*"lib": [
+      "ES5" // Promise
+    ],*/
+    //"types": [ "node" ],
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "outDir": "out",
+    "removeComments": true,
+    "declaration": true
+  }
+}
