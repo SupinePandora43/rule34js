@@ -19,5 +19,5 @@ console.log(response)
 * promise callback
 ```typescript
 import { posts } from "rule34js" // const posts = require("rule34js").posts
-const response = rule34js({ tags: [ "furry" ] }).then( (value) => { console.log( value ) } )
+posts({ tags: [ "furry" ] }).then( (value) => { console.log( value ) } )
 ```
