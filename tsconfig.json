@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "sourceRoot": "src",
+    //"sourceRoot": "src",
     "target": "ES2019",
     "moduleResolution": "Node",
     "module": "CommonJS",
@@ -9,7 +9,7 @@
     ],*/
     //"types": [ "node" ],
     "esModuleInterop": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "skipLibCheck": true,
     "outDir": "lib",
     "removeComments": false,
