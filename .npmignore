@@ -1,4 +1,9 @@
 node_modules
 .vscode
-.vscode
+.vs
+src
+tsconfig.json
+yarn.lock
+.gitignore
+.npmignore
 README.md

@@ -8,8 +8,8 @@ simple javascript api for `rule34.xxx`
 
 # Example
 
-```javascript
-const rule34js = require("rule34js")
-const response = rule34js({tags:["furry"]})
-response.then(()=>{console.log(response)})
+```typescript
+import { posts } from "rule34js" // const posts = require("rule34js").posts
+const response = await posts({tags:["furry"]})
+console.log(response)
 ```

@@ -1,7 +1,8 @@
 {
   "name": "rule34js",
   "version": "1.1.2",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "repository": "https://github.com/SupinePandora43/rule34js",
   "author": "SupinePandora43 <supinepandoraggg@gmail.com>",
   "license": "MIT",
@@ -14,7 +15,8 @@
     "rule34",
     "rule34.xxx",
     "xxx",
-    "api"
+    "api",
+    "async"
   ],
   "dependencies": {
     "bent": "^7.3.7",
