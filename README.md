@@ -11,13 +11,13 @@ simple javascript api for `rule34.xxx`
 # Example
 
 * async/await
-```typescript
+```javascript
 import { posts } from "rule34js" // const posts = require("rule34js").posts
 const response = await posts({ tags: [ "furry" ] })
 console.log(response)
 ```
 * promise callback
-```typescript
+```javascript
 import { posts } from "rule34js" // const posts = require("rule34js").posts
-posts({ tags: [ "furry" ] }).then( (value) => { console.log( value ) } )
+posts({ tags: [ "furry" ] }).then( (value) => { console.log( value ) })
 ```

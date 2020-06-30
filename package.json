@@ -1,6 +1,6 @@
 {
   "name": "rule34js",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "repository": "https://github.com/SupinePandora43/rule34js",
