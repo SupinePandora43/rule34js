@@ -5,6 +5,7 @@
   "types": "lib/index.d.ts",
   "repository": "https://github.com/SupinePandora43/rule34js",
   "author": "SupinePandora43 <supinepandoraggg@gmail.com>",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/@SupinePandora43" },
   "contributors": [
     {
       "name": "SupinePandora43",
