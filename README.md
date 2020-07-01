@@ -60,5 +60,5 @@ will return (`Post` object)
 # Options `Rule34OptionsOptional`
 
 * `tags`: string[] - tags to find, ex. ["sfw", "cute"]
-* ?`parse_tags`: boolean = true - creates tags_parsed variable
-* ?`remove_empty`: boolean = true - removes empty tags
+* ?`parse_tags`: boolean = true - **creates `tags_parsed`** variable
+* ?`remove_empty`: boolean = true - removes **empty (`''`)** tags
