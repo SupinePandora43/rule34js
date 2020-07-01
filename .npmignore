@@ -7,3 +7,4 @@ yarn.lock
 .gitignore
 .npmignore
 README.md
+test
