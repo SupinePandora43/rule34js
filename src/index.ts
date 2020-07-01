@@ -9,7 +9,7 @@ const parseroptions = {
     ignoreNameSpace: false,
     allowBooleanAttributes: false,
     parseNodeValue: true,
-    parseAttributeValue: false,
+    parseAttributeValue: true,
     trimValues: false,
     cdataTagName: "__cdata", //default is 'false'
     cdataPositionChar: "\\c",
@@ -98,6 +98,7 @@ export async function posts(options: Rule34OptionsOptional) {
         }
     return json.posts.post as Post[]
 }
+
 /**
  * TODO: fix it
  * Synced version of posts() function
