@@ -4,15 +4,17 @@ const posts = require("../lib/index").posts
 test("lol", async (t) => {
     let lol = await posts({ tags: ["sfw"] })
     lol[0].file_url = '' // rule34.xxx uses (min 3) mirrors for image saving
+    lol[0].sample_url = ''
+    lol[0].preview_url = ''
     t.equal(lol[0], {
         height: 1707,
         score: 1,
         file_url: '',
         parent_id: '',
-        sample_url: 'https://rule34.xxx/samples/3457/sample_ddb7abf29ea807c55c1109ba78ceb935.jpg',
+        sample_url: '',
         sample_width: 850,
         sample_height: 1134,
-        preview_url: 'https://rule34.xxx/thumbnails/3457/thumbnail_ddb7abf29ea807c55c1109ba78ceb935.jpg',
+        preview_url: '',
         rating: 's',
         tags: ' cute no_color sfw slime_girl suraimu suraimu(hyper_cawk) ',
         id: 3897419,
