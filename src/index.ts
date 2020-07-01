@@ -21,10 +21,11 @@ const fetchString = bent('string')
 type Rule34Options = {
     tags: String[]
     parse_tags: boolean
-    //timeout: number
 }
-type Rule34OptionsOptional = Partial<Rule34Options>
-type Post = {
+/** some options */
+export type Rule34OptionsOptional = Partial<Rule34Options>
+/** Definitions for available post's returning values */
+export type Post = {
     /** File, { png, jpeg, webm} */
     file_url: string
     /** file_url height */
@@ -98,26 +99,3 @@ export async function posts(options: Rule34OptionsOptional) {
         }
     return json.posts.post as Post[]
 }
-
-/**
- * TODO: fix it
- * Synced version of posts() function
- * don't use it
- * or only with deasync module
- * @module deasync
- * @link posts
- * @see posts
- * @param {Rule34OptionsOptional} options
- * @returns {Post[]}
- 
-export function postsSync(options: Rule34OptionsOptional) {
-    options.timeout = options.timeout || 100000
-    let asyncPromiseEnded = false
-    let returnValue:Post[]
-    const postsAsync = posts(options).catch(reason => {
-        throw reason
-    }).finally(() => {asyncPromiseEnded = true}).then((value)=>{returnValue = value})
-    const startedTime = new Date().getTime()
-    while (!asyncPromiseEnded && startedTime + options.timeout > new Date().getTime());
-    return postsAsync
-} */
