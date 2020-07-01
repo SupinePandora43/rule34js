@@ -6,5 +6,6 @@ tsconfig.json
 yarn.lock
 .gitignore
 .npmignore
+.github
 README.md
 test

@@ -19,15 +19,10 @@ console.log(response[0])
 * promise callback
 ```javascript
 import { posts } from "rule34js" // const posts = require("rule34js").posts
-posts({ tags: [ "furry" ] }).then( (value) => { console.log( value[0] ) })
-```
-* returning value
-```javascript
-import { posts } from "rule34js"
-posts({ tags: [ "sfw" ] }).then( (value) => { console.log(value[0]) } )
+posts({ tags: [ "sfw" ] }).then( (value) => { console.log( value[0] ) })
 ```
 will return (`Post` object)
-```json
+```javascript
 {
   height: 1707,
   score: 1,
@@ -63,4 +58,4 @@ will return (`Post` object)
     ''
   ]
 }
-``
+```

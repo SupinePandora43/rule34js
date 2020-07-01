@@ -1,10 +1,17 @@
 {
   "name": "rule34js",
-  "version": "2.1.3",
+  "version": "2.1.5",
   "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "types": "lib/index.d.ts",
   "repository": "https://github.com/SupinePandora43/rule34js",
   "author": "SupinePandora43 <supinepandoraggg@gmail.com>",
+  "contributors": [
+    {
+      "name": "SupinePandora43",
+      "email": "supinepandoraggg@gmail.com",
+      "url": "https://github.com/SupinePandora43"
+    }
+  ],
   "license": "MIT",
   "scripts": {
     "build": "tsc",
@@ -17,6 +24,7 @@
     "rule34",
     "rule34.xxx",
     "xxx",
+    "web",
     "api",
     "async"
   ],
@@ -26,6 +34,7 @@
   },
   "devDependencies": {
     "typescript": "^3.9.5",
+    "@types/bent": "^7.0.2",
     "zora": "^4.0.0"
   }
 }
