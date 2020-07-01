@@ -15,7 +15,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "echo disabled",
+    "test": "node test/index.test.js",
     "ci": "npm run-script build"
   },
   "keywords": [
