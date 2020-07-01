@@ -4,7 +4,7 @@
     "moduleResolution": "Node",
     "module": "CommonJS",
     "sourceMap": false,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "outDir": "lib",
     "removeComments": false,
     "declaration": true

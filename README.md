@@ -2,7 +2,7 @@
 
 simple javascript api for `rule34.xxx`
 
-# features
+# Features
 
 * uses only official api
 * has typings (`.d.ts`)
@@ -48,14 +48,17 @@ will return (`Post` object)
   preview_width: 112,
   preview_height: 150,
   tags_parsed: [
-    '',
     'cute',
     'no_color',
     'sfw',
     'slime_girl',
     'suraimu',
     'suraimu(hyper_cawk)',
-    ''
   ]
 }
 ```
+# Options `Rule34OptionsOptional`
+
+* `tags`: string[] - tags to find, ex. ["sfw", "cute"]
+* ?`parse_tags`: boolean = true - creates tags_parsed variable
+* ?`remove_empty`: boolean = true - removes empty tags

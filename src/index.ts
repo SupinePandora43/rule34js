@@ -19,8 +19,14 @@ const parseroptions = {
 }
 const fetchString = bent('string')
 type Rule34Options = {
+    /** Tags for find */
     tags: String[]
+    /** tags_parsed depends on it */
     parse_tags: boolean
+    /** Removes empty tags ('') 
+     *  parse_tags is required
+     */
+    remove_empty: boolean
 }
 /** some options */
 export type Rule34OptionsOptional = Partial<Rule34Options>
@@ -89,13 +95,21 @@ export async function posts(options: Rule34OptionsOptional) {
     }
     options.tags = options.tags || ["all"]
     options.parse_tags = options.parse_tags || true
+    options.remove_empty = options.remove_empty || true
     const url = `https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags=${options.tags.join("+")}`
     const obj = await fetchString(url)
     const json = parse(obj, parseroptions, true)
-    if (options.parse_tags)
+    if (options.parse_tags) {
         for (let postI = 0; postI < json.posts.post.length; postI++) {
             let cpost: Post = json.posts.post[postI]
             cpost.tags_parsed = cpost.tags.split(" ")
         }
+        if (options.remove_empty) {
+            for (let postI = 0; postI < json.posts.post.length; postI++) {
+                let cpost: Post = json.posts.post[postI]
+                cpost.tags_parsed = cpost.tags_parsed.filter((val) => { return val != "" })
+            }
+        }
+    }
     return json.posts.post as Post[]
 }
