@@ -27,11 +27,16 @@ type Rule34Options = {
      *  parse_tags is required
      */
     remove_empty: boolean
+    /** Page number */
+    pid: number
+    /** Limit of posts
+     * 100 is max */
+    limit: number
 }
 /** some options */
-export type Rule34OptionsOptional = Partial<Rule34Options>
+type Rule34OptionsOptional = Partial<Rule34Options>
 /** Definitions for available post's returning values */
-export type Post = {
+type Post = {
     /** File, { png, jpeg, webm} */
     file_url: string
     /** file_url height */
@@ -84,6 +89,16 @@ export type Post = {
     /** Has Comments */
     has_comments: boolean
 }
+type Rule34jsOutput = {
+    /** Count of all posts founded by required tags */
+    count: number,
+    /** Offset from start
+     * offset = pid * limit
+     */
+    offset: number
+    /** Received posts */
+    posts: Post[]
+}
 /**
  * Returns massive of posts
  * @param {Rule34OptionsOptional} options
@@ -96,20 +111,24 @@ export async function posts(options: Rule34OptionsOptional) {
     options.tags = options.tags || ["all"]
     options.parse_tags = options.parse_tags || true
     options.remove_empty = options.remove_empty || true
-    const url = `https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags=${options.tags.join("+")}`
+    options.pid = options.pid || 0
+    options.limit = options.limit || 100
+    if (options.limit > 100) console.warn("rule34js: 100 is limit, using everything larger makes no sense")
+    const url = `https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags=${options.tags.join("+")}&pid=${options.pid}&limit=${options.limit}`
     const obj = await fetchString(url)
     const json = parse(obj, parseroptions, true)
-    if (options.parse_tags) {
-        for (let postI = 0; postI < json.posts.post.length; postI++) {
-            let cpost: Post = json.posts.post[postI]
-            cpost.tags_parsed = cpost.tags.split(" ")
-        }
+    if (json.posts && json.posts.post && options.parse_tags) {
         if (options.remove_empty) {
             for (let postI = 0; postI < json.posts.post.length; postI++) {
                 let cpost: Post = json.posts.post[postI]
-                cpost.tags_parsed = cpost.tags_parsed.filter((val) => { return val != "" })
+                cpost.tags_parsed = cpost.tags.split(" ").filter((val) => { return val != "" })
+            }
+        } else {
+            for (let postI = 0; postI < json.posts.post.length; postI++) {
+                let cpost: Post = json.posts.post[postI]
+                cpost.tags_parsed = cpost.tags.split(" ")
             }
         }
     }
-    return json.posts.post as Post[]
+    return { count: (json.posts ? json.posts.count : 0), offset: (json.posts ? json.posts.offset : 0), posts: (json.posts ? json.posts.post : []) } as Rule34jsOutput
 }
