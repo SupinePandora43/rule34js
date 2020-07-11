@@ -16,7 +16,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "node test/index.test.js",
+    "test": "echo NOPE.avi",
     "ci": "npm run-script build"
   },
   "keywords": [
