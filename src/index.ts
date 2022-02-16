@@ -114,7 +114,7 @@ export async function posts(options: Rule34OptionsOptional) {
     options.pid = options.pid || 0
     options.limit = options.limit || 100
     if (options.limit > 100) console.warn("rule34js: 100 is limit, using everything larger makes no sense")
-    const url = `https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags=${options.tags.join("+")}&pid=${options.pid}&limit=${options.limit}`
+    const url = `https://api.rule34.xxx/index.php?page=dapi&s=post&q=index&tags=${options.tags.join("+")}&pid=${options.pid}&limit=${options.limit}`
     const obj = await fetchString(url)
     const json = parse(obj, parseroptions, true)
     if (json.posts && json.posts.post && options.parse_tags) {
